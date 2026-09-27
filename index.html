@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recepi Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZmH+YzG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-utensils"></i> Recepi Finder</h1>
+            <p>Find delicious recipes from around the world</p>
+        </header>
+        <p class ="api-link">Data from <a href="https://www.themealdb.com/api.php" >TheMealDB🍴</a></p>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for a recipe...">
+            <button id="search-btn">Search</button>
+        </div>
+        <div id="error-container" class="hidden">
+            <p>No meals found. Try another input</p>
+
+        </div>
+        <div class="result-heading"></div>
+        <div class="meals-container">
+            <div class="meal" data-meal-id="52777">
+                <img src="https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg" alt="Meal Image">
+                <div class="meal-info">
+                    <div class="meal-title">Mediterranean Pasta</div>
+                    <div class="meal-category">Seafood</div>
+                </div>
+            </div>
+
+            <div class="meal" data-meal-id="52777">
+                <img src="https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg" alt="Meal Image">
+                <div class="meal-info">
+                    <div class="meal-title">Mediterranean Pasta</div>
+                    <div class="meal-category">Seafood</div>
+                </div>
+            </div>
+
+            <div class="meal" data-meal-id="52777">
+                <img src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg" alt="Meal Image">
+                <div class="meal-info">
+                    <div class="meal-title">Mediterranean Pasta</div>
+                    <div class="meal-category">Seafood</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="meal-details" class="hidden">
+            <button id="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to recipes</button>
+            <div class="meal-details-content">
+                <h2 class="meal-details-title">Meal Title</h2>
+                <img src="" alt="Meal" class="meal-details-img">
+                <div class="meta-row">
+                    <span class="cat-tag"><i class="fa-solid fa-folder-open"></i> Category: <span id="detail-category"></span></span>
+                    <span class="area-tag"><i class="fa-solid fa-globe"></i> Area: <span id="detail-area"></span></span>
+                </div>
+
+                <h3><i class="fa-solid fa-carrot"></i> Ingredients</h3>
+                <ul id="ingredients-list"></ul>
+
+                <h3><i class="fa-solid fa-kitchen-set"></i> Instructions</h3>
+                <div id="instructions-text"></div>
+            </div>
+        </div>
+    </div> 
+
+    <script src="script.js"></script>
+</body>
+</html>

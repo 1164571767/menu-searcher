@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fff8f0;
+    color: #2d2d2d;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    color: #d64045;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.api-link {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.api-link a {
+    color: #d64045;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* 搜索区域 */
+.search-container {
+    display: flex;
+    gap: 8px;
+    max-width: 600px;
+    margin: 0 auto 24px;
+}
+
+#search-input {
+    flex:1;
+    padding: 12px 16px;
+    border: 2px solid #ffd3b6;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#search-input:focus {
+    border-color: #d64045;
+}
+
+#search-btn {
+    padding: 12px 22px;
+    background-color: #d64045;
+    color: white;
+    border: none;
+    border-radius:8px;
+    cursor: pointer;
+    font-weight:600;
+    transition: 0.25s ease;
+}
+
+#search-btn:hover {
+    background-color: #b82e33;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#error-container {
+    text-align:center;
+    color:#c0392b;
+    font-weight:500;
+    margin:12px 0;
+}
+
+.result-heading {
+    margin:12px 0;
+    font-size:1.2rem;
+    font-weight:600;
+}
+
+/* 菜品卡片列表 响应式网格 */
+.meals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap:24px;
+    margin-bottom:30px;
+}
+
+.meal {
+    background: white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    cursor:pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.meal:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.meal img {
+    width:100%;
+    height:220px;
+    object-fit: cover;
+}
+
+.meal-info {
+    padding:14px;
+}
+
+.meal-title {
+    font-size:1.15rem;
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.meal-category {
+    color:#777;
+    font-size:0.95rem;
+}
+
+/* 菜品详情页 */
+#meal-details {
+    background:#ffffff;
+    padding:24px;
+    border-radius:14px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.1);
+}
+
+#back-btn {
+    background:#eee;
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:1rem;
+    margin-bottom:20px;
+    transition:0.2s;
+}
+
+#back-btn:hover {
+    background:#ddd;
+}
+
+.meal-details-title {
+    font-size:2rem;
+    color:#d64045;
+    margin-bottom:16px;
+}
+
+.meal-details-img {
+    max-width: 520px;
+    width:100%;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.meta-row {
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:24px;
+}
+
+.cat-tag,.area-tag {
+    background:#fff0e6;
+    padding:6px 12px;
+    border-radius:6px;
+    font-weight:500;
+}
+
+h3 {
+    margin:22px 0 10px;
+    color:#333;
+}
+
+#ingredients-list {
+    list-style:disc;
+    padding-left:24px;
+}
+
+#ingredients-list li {
+    margin:4px 0;
+}
+
+#instructions-text {
+    white-space: pre-line;
+    line-height:1.8;
+    color:#333;
+}
+
+/* 移动端适配 */
+@media(max-width:600px){
+    header h1{
+        font-size:1.8rem;
+    }
+    .search-container{
+        flex-direction:column;
+    }
+    .meal-details-title{
+        font-size:1.5rem;
+    }
+}
