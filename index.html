@@ -1,60 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
-<head> 
+<html lang="zh-CN">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recepi Finder</title>
+    <title>sfy 的前端网页作品集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    >
     <link rel="stylesheet" href="style.css">
-    <link 
-        rel="stylesheet" 
+    <link
+        rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        
         referrerpolicy="no-referrer"
     />
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1><i class="fa-solid fa-utensils"></i> sfy的前端网页作品集</h1>
-            <p>这是我的前端网页作品集，点击跳转到具体页面!</p>
-        </header>
-       <!--  <p class ="api-link">Data from <a href="https://www.themealdb.com/api.php" >TheMealDB🍴</a></p>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search for a recipe...">
-            <button id="search-btn">Search</button>
-        </div> -->
-        <div id="error-container" class="hidden">
-            <p>No meals found. Try another input</p>
 
-        </div>
-        <div class="result-heading"></div>
-        <div class="meals-container">
-            <div class="meal" data-url="https://quiz-zeta-azure.vercel.app/">
-                <img src="img/quiztime.png">
-                <div class="meal-info">
-                    <div class="meal-title">quiz time</div>
-                    <div class="meal-category">quiz</div>
-                </div>
+        <!-- Hero -->
+        <section class="hero">
+            <span class="hero-dot" aria-hidden="true"></span>
+            <h1>sfy 的前端网页<br>作品集</h1>
+            <p class="hero-sub">
+                收录我在前端练习中完成的交互页面，<br>
+                点击任意卡片即可在新标签页打开在线演示
+            </p>
+        </section>
+
+        <!-- 作品展示 -->
+        <section class="showcase">
+            <h2 class="section-title">作品展示</h2>
+
+            <div id="error-container" class="hidden">
+                <p>No meals found. Try another input</p>
             </div>
+            <div class="result-heading"></div>
 
-            <div class="meal" data-url="https://menu-searcher-zeta.vercel.app/">
-                <img src="img/recipe.png">
-                <div class="meal-info">
-                    <div class="meal-title">recipe finder</div>
-                    <div class="meal-category">recipe</div>
-                </div>
+            <div class="meals-container">
+
+                <article class="meal" data-url="https://quiz-zeta-azure.vercel.app/" tabindex="0">
+                    <div class="meal-media">
+                        <img src="img/quiztime.png" alt="quiz time 页面预览">
+                        <span class="meal-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                    <div class="meal-info">
+                        <div class="meal-head">
+                            <span class="meal-num">1</span>
+                            <h3 class="meal-title">quiz time</h3>
+                        </div>
+                        <p class="meal-category">
+                            在线答题应用，包含题目切换、选项交互与即时结果反馈
+                        </p>
+                    </div>
+                </article>
+
+                <article class="meal" data-url="https://menu-searcher-zeta.vercel.app/" tabindex="0">
+                    <div class="meal-media">
+                        <img src="img/recipe.png" alt="recipe finder 页面预览">
+                        <span class="meal-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                    <div class="meal-info">
+                        <div class="meal-head">
+                            <span class="meal-num">2</span>
+                            <h3 class="meal-title">recipe finder</h3>
+                        </div>
+                        <p class="meal-category">
+                            菜谱检索工具，支持关键词搜索、列表渲染与详情查看
+                        </p>
+                    </div>
+                </article>
+
+                <article class="meal" data-url="https://register-ten-sigma.vercel.app/" tabindex="0">
+                    <div class="meal-media">
+                        <img src="img/register.png" alt="register form 页面预览">
+                        <span class="meal-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                    <div class="meal-info">
+                        <div class="meal-head">
+                            <span class="meal-num">3</span>
+                            <h3 class="meal-title">register form</h3>
+                        </div>
+                        <p class="meal-category">
+                            注册表单页面，涵盖输入校验、错误提示与提交状态处理
+                        </p>
+                    </div>
+                </article>
+
             </div>
+        </section>
 
-            <div class="meal" data-url="https://register-ten-sigma.vercel.app/">
-                <img src="img/register.png">
-                <div class="meal-info">
-                    <div class="meal-title">register form</div>
-                    <div class="meal-category">register</div>
-                </div>
-            </div>
-        </div>
-
-        <div id="meal-details" class="hidden">
+        <!-- 详情面板（默认隐藏，保留原有交互结构） -->
+        <section id="meal-details" class="hidden">
             <button id="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to recipes</button>
             <div class="meal-details-content">
                 <h2 class="meal-details-title">Meal Title</h2>
@@ -70,8 +109,14 @@
                 <h3><i class="fa-solid fa-kitchen-set"></i> Instructions</h3>
                 <div id="instructions-text"></div>
             </div>
-        </div>
-    </div> 
+        </section>
+
+        <footer class="site-footer">
+            <span class="footer-dot"></span>
+            持续更新中 · 使用原生 HTML / CSS / JavaScript 构建
+        </footer>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
